@@ -68,6 +68,7 @@ Table of contents
 Version pragma
 
 pragma solidity ^0.5.2; will compile with a compiler version >= 0.5.2 and < 0.6.0.
+
 Import files
 
 import "filename";
@@ -75,7 +76,9 @@ import "filename";
 import * as symbolName from "filename"; or import "filename" as symbolName;
 
 import {symbol1 as alias, symbol2} from "filename";
-Types
+
+Types :
+
 Boolean
 
 bool : true or false
@@ -167,7 +170,11 @@ bytes1(byte), bytes2, bytes3, ..., bytes32.
 
 Operators:
 
-Comparisons: <=, <, ==, !=, >=, > (evaluate to bool) Bit operators: &, |, ^ (bitwise exclusive or), ~ (bitwise negation), << (left shift), >> (right shift) Index access: If x is of type bytesI, then x[k] for 0 <= k < I returns the k th byte (read-only).
+Comparisons: <=, <, ==, !=, >=, > (evaluate to bool) 
+
+Bit operators: &, |, ^ (bitwise exclusive or), ~ (bitwise negation), << (left shift), >> (right shift) 
+
+Index access: If x is of type bytesI, then x[k] for 0 <= k < I returns the k th byte (read-only).
 
 Members
 
@@ -178,6 +185,7 @@ Dynamic byte arrays
 bytes: Dynamically-sized byte array. It is similar to byte[], but it is packed tightly in calldata. Not a value-type!
 
 string: Dynamically-sized UTF-8-encoded string. It is equal to bytes but does not allow length or index access. Not a value-type!
+
 Enum
 
 Enum works just like in every other language.
@@ -208,7 +216,9 @@ Declared as mapping(_KeyType => _ValueType)
 
 Mappings can be seen as hash tables which are virtually initialized such that every possible key exists and is mapped to a value.
 
-key can be almost any type except for a mapping, a dynamically sized array, a contract, an enum, or a struct. value can actually be any type, including mappings.
+key can be almost any type except for a mapping, a dynamically sized array, a contract, an enum, or a struct. 
+value can actually be any type, including mappings.
+
 Control Structures
 
 Most of the control structures from JavaScript are available in Solidity except for switch and goto.
@@ -223,6 +233,7 @@ Most of the control structures from JavaScript are available in Solidity except 
     ? :
 
 Functions
+
 Structure
 
 function (<parameter types>) {internal|external|public|private} [pure|constant|view|payable] [returns (<return types>)]
@@ -234,6 +245,7 @@ Access modifiers
     external - Cannot be accessed internally, only externally. Recommended to reduce gas. Access internally with this.f.
 
 Parameters
+    
 Input parameters
 
 Parameters are declared just like variables and are memory variables.
@@ -251,6 +263,7 @@ function f(uint _a, uint _b) returns (uint _sum) {
 Output can also be specified using return statement. In that case, we can omit parameter name returns (uint).
 
 Multiple return types are possible with return (v0, v1, ..., vn).
+
 Constructor
 
 Function that is executed during contract deployment. Defined using the constructor keyword.
@@ -265,6 +278,7 @@ contract C {
 }
 
 Function Calls
+    
 Internal Function Calls
 
 Functions of the current contract can be called directly (internally - via jumps) and also recursively
@@ -379,6 +393,7 @@ function() {
 }
 
 Contracts
+    
 Creating contracts using new
 
 Contracts can be created from another contract using new keyword. The source of the contract has to be known in advance.
@@ -542,6 +557,7 @@ Error Handling
     Catching exceptions is not yet possible.
 
 Global variables
+    
 Block variables
 
     block.blockhash(uint blockNumber) returns (bytes32): hash of the given block - only works for the 256 most recent blocks excluding current
